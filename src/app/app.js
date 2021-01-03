@@ -10,8 +10,7 @@
     angular
         .module('app', [
             'ngMaterial','ngAnimate', 'ngCookies',
-            'ngSanitize', 'ui.router', 'ngMaterial',
-            'md.data.table'
+            'ngSanitize', 'ui.router', 'md.data.table'
         ])
 
         .config(function($stateProvider, $urlRouterProvider) {
@@ -29,7 +28,9 @@
 
                 .state('userManagement', {
                     url: '/userManagement',
-                    template: '<h1>USER MANAGEMENT</h1>',
+                    templateUrl: './src/app/views/UserManagement.html',
+                    controller: 'UserManagement',
+                    controllerAs: 'vm',
                     resolve: {
                         emit: function() {
                             console.log('USER MANAGEMENT')
