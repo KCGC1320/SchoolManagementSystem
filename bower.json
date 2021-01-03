@@ -1,0 +1,19 @@
+{
+  "name": "AngularJS Material",
+  "description": "AngularJS Material Design for portfolio",
+  "authors": [
+    "Kevin Christian G. Cabana"
+  ],
+  "license": "ISC",
+  "homepage": "http://localhost:5000/",
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angular-material": "^1.2.2",
+    "angular-material-data-table": "^0.10.10",
+    "angular-animate": "^1.8.2",
+    "angular-cookies": "^1.8.2",
+    "angular-touch": "^1.8.2",
+    "angular-sanitize": "^1.8.2",
+    "angular-ui-router": "^1.0.29"
+  }
+}

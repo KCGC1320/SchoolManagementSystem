@@ -1,0 +1,64 @@
+<div layout="column" style="height:100%;" ng-cloak>
+
+    <section layout="row" flex>
+
+        <md-sidenav class="md-sidenav-left" md-component-id="left-panel" md-disable-backdrop="" md-is-locked-open="$mdMedia('gt-md') && vm.HeaderPanel.leftSidenavLockedOpen"
+            md-whiteframe="4">
+            <!-- <img class="side-panel-avatar" src="./src/app/images/myself.jpg" alt="myself"/> -->
+            <md-toolbar class="md-hue-2" layout-padding>
+                <div layout="row">
+                    <md-toolbar-filler>
+                        <img class="panel-avatar" src="./src/app/images/baliwag-polytechnic-college.jpg" alt="myself"/>
+                    </md-toolbar-filler>
+                    <div class="md-toolbar-tools">
+                        <h2 flex md-truncate>BTECH | SMS</h2>
+                    </div>
+                </div>
+            </md-toolbar>
+
+            <md-content >
+                <md-list-item ui-sref="dashboard" ng-click="vm.HeaderPanel.navigateTo('Dashboard')">
+                    <md-icon aria-label="Menu" class="material-icons">dashboard</md-icon>
+                    <p> Dashboard </p>
+                </md-list-item>
+                <md-list-item ui-sref="userManagement" ng-click="vm.HeaderPanel.navigateTo('User Management')">
+                    <md-icon aria-label="Menu" class="material-icons">groups</md-icon>
+                    <p> User Management </p>
+                </md-list-item>
+                <md-divider></md-divider>
+            </md-content>
+
+        </md-sidenav>
+
+        <md-content flex>
+            <md-toolbar id="panel-toolbar">
+                <div class="md-toolbar-tools">
+                    <md-button class="md-icon-button" aria-label="Menu" ng-click="vm.HeaderPanel.toggleSidenav('left-panel')">
+                        <md-icon aria-label="Menu" style='color: black;' class="material-icons">{{vm.HeaderPanel.leftSidenavIcon}}</md-icon>
+                    </md-button>
+                    <h2 flex md-truncate>{{vm.HeaderPanel.routeName}}</h2>
+
+                    <md-button style='height: -webkit-fill-available;' ng-click="vm.HeaderPanel.toggleMenu('top-panel')" layout="row" layout-align="center center">
+                        <img class="panel-avatar" src="./src/app/images/myself.jpg" alt="myself"/>
+                        <h6>Kevin Christian Cabana</h6>
+                        <md-icon aria-label="Menu" class="material-icons" style='color: black;'>keyboard_arrow_down</md-icon>
+                    </md-button>
+                    <md-toolbar-filler>
+                        <md-icon aria-label="Menu" style='color: black;' class="material-icons">search</md-icon>
+                    </md-toolbar-filler>
+                   
+                    
+                </div>
+            </md-toolbar>
+            <div layout="column" layout-align="top center">
+                <ui-view></ui-view>
+            </div>
+
+            <div flex></div>
+
+        </md-content>
+
+
+    </section>
+
+</div>
