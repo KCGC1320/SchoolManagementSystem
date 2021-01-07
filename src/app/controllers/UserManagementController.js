@@ -13,6 +13,7 @@
             var vm = this;
             vm.globalMethods = globalMethods // global method injected
 
+
             vm.selected = [];
             
             vm.userList = [{
@@ -30,9 +31,9 @@
                 limit: 5,
                 page: 1
             };
-
+            
             vm.delete = function(){
-                vm.globalMethods.OpenToast('Method DELETE Not Available')
+                vm.userList = globalMethods.removeSetArray(vm.selected, vm.userList)
             }
 
             vm.update = function(){

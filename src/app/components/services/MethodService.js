@@ -10,15 +10,31 @@
         .module('app')
         .factory('globalMethods', globalMethods)
 
-    function globalMethods($mdToast,$log) {
+    function globalMethods($mdToast, $log) {
         return {
-           OpenToast(message){
-            $mdToast.show(
-                $mdToast.simple()
-                .textContent(message)
-                .position('bottom right')
-                .hideDelay(3000))
-           }
+            
+             /**
+              * @method: OpenToast(string)
+              * @description: used to open Toast of angular material
+              */
+            OpenToast(message) {
+                $mdToast.show(
+                    $mdToast.simple()
+                        .textContent(message)
+                        .position('bottom right')
+                        .hideDelay(3000))
+            },
+
+            /**
+              * @method: removeSetArray(array, array)
+              * @description: used to remove set of data in an array
+              */
+            removeSetArray(remove, array) {
+                for (let object of remove) {
+                    array = array.filter(item => item !== object)
+                }
+                return array;
+            }
         };
     }
 

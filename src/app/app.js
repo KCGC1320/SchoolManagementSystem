@@ -18,7 +18,7 @@
 
                 .state('dashboard', {
                     url: '/dashboard',
-                    template: '<h1>DASHBOARD</h1>',
+                    templateUrl: './src/app/views/Dashboard.html',
                     resolve: {
                         emit: function() {
                             console.log('DASHBOARD')
