@@ -2,17 +2,20 @@
     <md-card layout-padding>
         <md-toolbar class="md-hue-2">
             <div class="md-toolbar-tools">
+                <md-button class="md-fab" aria-label="add user" ng-click="vm.UserMgtFactory.OpenModalDialog($event)">
+                    <md-icon aria-label="Add" style='color:#FFFFFF' class="material-icons">add</md-icon>
+                </md-button>
                 <span flex>User List Information</span>
                 <md-button class="md-icon-button" aria-label="Search" ng-click="vm.HeaderPanel.toggleSidenav('left-panel')">
                     <md-icon aria-label="Menu" class="material-icons">filter_list</md-icon>
                 </md-button>
-                <md-button class="md-icon-button" aria-label="Menu" ng-if="vm.selected.length" ng-click="vm.delete()">
-                    <md-icon aria-label="Menu" class="material-icons">delete</md-icon>
+                <md-button class="md-icon-button" aria-label="Delete" ng-if="vm.UserMgtFactory.selected.length" ng-click="vm.UserMgtFactory.deleteUser()">
+                    <md-icon aria-label="Delete" class="material-icons">delete</md-icon>
                 </md-button>
             </div>
         </md-toolbar>
         <md-table-container>
-            <table md-table md-row-select multiple ng-model="vm.selected" md-progress="promise">
+            <table md-table md-row-select multiple ng-model="vm.UserMgtFactory.selected" md-progress="promise">
                 <thead md-head>
                     <tr md-row>
                         <th md-column>Username</th>
@@ -22,20 +25,19 @@
                     </tr>
                 </thead>
                 <tbody md-body>
-                    <tr md-row md-select="user" md-select-id="name" md-auto-select ng-repeat="user in vm.userList">
+                    <tr md-row md-select="user" md-select-id="name" md-auto-select ng-repeat="user in vm.UserMgtFactory.UserList">
                         <td md-cell>{{user.name}}</td>
                         <td md-cell>{{user.position}}</td>
                         <td md-cell>{{user.level}}</td>
                         <td md-cell>
-                            <md-button class="md-icon-button" aria-label="Update" ng-click="vm.update(); $event.stopPropagation();">
-                                <md-icon aria-label="Create" class="material-icons">create</md-icon>
+                            <md-button class="md-icon-button" aria-label="Update" ng-click="vm.UserMgtFactory.OpenModalDialog($event, user); $event.stopPropagation();">
+                                <md-icon aria-label="Update" class="material-icons">create</md-icon>
                             </md-button>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </md-table-container>
-        
-        <md-table-pagination md-limit="vm.query.limit" md-limit-options="[5, 10, 15]" md-page="vm.query.page" md-total="{{vm.userList.length}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination>
+        <md-table-pagination md-limit="vm.UserMgtFactory.query.limit" md-limit-options="[5, 10, 15]" md-page="vm.UserMgtFactory.query.page" md-total="{{vm.UserMgtFactory.UserList.length}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination>
     </md-card>           
 </md-content>

@@ -29,7 +29,7 @@
                 .state('userManagement', {
                     url: '/userManagement',
                     templateUrl: './src/app/views/UserManagement.html',
-                    controller: 'UserManagement',
+                    controller: 'UserMgtController',
                     controllerAs: 'vm',
                     resolve: {
                         emit: function() {

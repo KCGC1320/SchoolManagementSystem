@@ -10,19 +10,27 @@
         .module('app')
         .factory('globalMethods', globalMethods)
 
-    function globalMethods($mdToast, $log) {
+    function globalMethods($mdToast, $mdDialog) {
         return {
-            
-             /**
-              * @method: OpenToast(string)
-              * @description: used to open Toast of angular material
-              */
+
+            /**
+             * @method: OpenToast(string)
+             * @description: used to open Toast of angular material
+             */
             OpenToast(message) {
                 $mdToast.show(
                     $mdToast.simple()
                         .textContent(message)
                         .position('bottom right')
                         .hideDelay(3000))
+            },
+
+            /**
+              * @method: CloseModal(type)
+              * @description: used to close Dialog of angular material
+              */
+            CloseModal($event) {
+                $mdDialog.hide($event)
             },
 
             /**
