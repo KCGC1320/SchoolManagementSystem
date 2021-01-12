@@ -19,6 +19,8 @@
                 .state('dashboard', {
                     url: '/dashboard',
                     templateUrl: './src/app/views/Dashboard.html',
+                    controller: 'DashboardController',
+                    controllerAs: 'vm',
                     resolve: {
                         emit: function() {
                             console.log('DASHBOARD')

@@ -1,0 +1,34 @@
+<md-card style="margin: 0px;">
+  <div class="imageslide" ng-switch='vm.slideshow'>
+      <div class="slider-content" ng-switch-when="1">
+        <img ng-src="./src/app/images/slider/st_agustine.png" class="md-card-image" width="100%" height="400px"/>
+      </div>  
+      <div class="slider-content" ng-switch-when="2">
+        <img ng-src="./src/app/images/slider/event.jpg" class="md-card-image" width="100%" height="400px"/>
+      </div>
+      <div class="slider-content" ng-switch-when="3">
+        <img ng-src="./src/app/images/slider/btech.jpg" class="md-card-image" width="100%" height="400px"/>
+      </div>  
+  </div>
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">WELCOME TO BALIWAG POLYTECHNIC COLLAGE</span>
+    </md-card-title-text>
+  </md-card-title>
+  <md-card-content>
+    <p>
+      The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+      two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+    </p>
+  </md-card-content>
+  <md-card-actions class="container-overlay">
+    <div layout="row" layout-align="space-between center">
+      <md-button class="md-icon-button button-overlay" aria-label="Update" ng-click="vm.navigator(0); $event.stopPropagation();">
+        <md-icon class="material-icons img-overlay">arrow_back_ios</md-icon>
+      </md-button>
+      <md-button class="md-icon-button button-overlay" aria-label="Update" ng-click="vm.navigator(1); $event.stopPropagation();">
+        <md-icon class="material-icons img-overlay">arrow_forward_ios</md-icon>
+      </md-button>
+    </div>
+  </md-card-actions>
+</md-card>

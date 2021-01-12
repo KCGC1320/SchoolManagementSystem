@@ -9,17 +9,23 @@
         .module('app')
         .controller('UserMgtController', UserMgtController)
         .factory('UserMgtFactory', UserMgtFactory)
-        .run(function (UserMgtFactory) {
-            UserMgtFactory.UserList = [{
-                name: 'Kevin Christian G. Cabana',
-                position: 'Software Developer',
-                level: 'Developer'
-            }, {
-                name: 'Jomari Buena',
-                position: 'Software Developer',
-                level: 'Supervisor'
-            }];
-        })
+        .run(runBlock)
+
+    UserMgtController.$inject = ['UserMgtFactory', 'globalMethods', '$mdDialog'];
+    UserMgtFactory.$inject = ['$mdDialog', 'globalMethods'];
+    runBlock.$inject = ['UserMgtFactory'];
+
+    function runBlock(UserMgtFactory) {
+        UserMgtFactory.UserList = [{
+            name: 'Kevin Christian G. Cabana',
+            position: 'Software Developer',
+            level: 'Developer'
+        }, {
+            name: 'Jomari Buena',
+            position: 'Software Developer',
+            level: 'Supervisor'
+        }];
+    }
 
     function UserMgtController(UserMgtFactory, globalMethods, $mdDialog) {
         var vm = this;

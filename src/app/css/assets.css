@@ -32,4 +32,15 @@
 }
 
 
-
+.container-overlay {
+    position: absolute;
+    width: 100%;
+    top: 25%;
+}
+.button-overlay {
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+}
+.img-overlay {
+    color: #ffffff;
+}
